@@ -1,0 +1,87 @@
+#!/bin/bash
+echo "Enter the option: "
+echo "Display : a = Print the data"
+echo "Display : b = list all files in the current directory"
+read choice
+case $choice in
+a) data;;
+b) ls;;
+*) Not a valid option
+esac
+
+
+
+#!/bin/bash
+echo "options:"
+echo "a : addition"
+echo "b: subtraction"
+echo "c: multiplication"
+echo "d: division"
+echo "enter your choice:"
+read choice
+echo "enter num1: "
+read a
+echo "enter num2: "
+read b
+case $choice in
+a)echo "$((a+b))";;
+b)echo "$((a-b))";;
+c)echo "$((a*b))";;
+d)echo "$((a/b))";;
+*)echo "enter a valid option : "
+esac
+
+
+
+#!/bin/bash
+
+echo "Choose option:"
+echo "a) Leap Year"
+echo "b) Even or Odd"
+echo "c) Find Largest of Two Numbers"
+read choice
+
+case $choice in
+    a)
+        echo "Enter year:"
+        read year
+
+        if (( (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ))
+        then
+            echo "$year is a Leap Year"
+        else
+            echo "$year is NOT a Leap Year"
+        fi
+        ;;
+
+    b)
+        echo "Enter a number:"
+        read num
+
+        if (( num % 2 == 0 ))
+        then
+            echo "$num is Even"
+        else
+            echo "$num is Odd"
+        fi
+        ;;
+
+    c)
+        echo "Enter two numbers:"
+        read n1 n2
+
+        if (( n1 > n2 ))
+        then
+            echo "$n1 is greater"
+        elif (( n2 > n1 ))
+        then
+            echo "$n2 is greater"
+        else
+            echo "Both numbers are equal"
+        fi
+        ;;
+
+    *)
+        echo "Invalid choice"
+        ;;
+esac
